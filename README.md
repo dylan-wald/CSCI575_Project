@@ -12,7 +12,8 @@
 **3) Code Structure:**
 
 - Main.py - runs the entire simulation, including the following scripts:
-    - data_loader.py - this loads and cleans the data
+    - sys_id_data.csv - this is the data used to train and test the models
+    - data_loader.py - this loads and cleans the provided data
     - f_RNN.py - this is the recurrent neural network class
     - f_NSSM.py - this is the neural state space model class
         - f_LinearConstrained.py - this contains the constraints on the A matrix (described in report)
@@ -20,8 +21,8 @@
 
 **4) How to run:**
 
-- in Main.py, select type of normailzation by setting equal to "True", the rest to "False" (lines 48 - 50)
-- type "python Main.py" into the terminal and press enter
+- in Main.py, select type of normailzation by setting desired method equal to "True" and the others equal to "False" (lines 48 - 50)
+- type "python Main.py" into the terminal/command prompt and press enter
 
 Required packages:
 - numpy (version 1.24.2)

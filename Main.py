@@ -135,21 +135,15 @@ for mod_name in model_list:
         B = BE[0][:2].reshape(1,2)
         E = BE[0][2:].reshape(1,3)
         A = model.cell.weight_hh.squeeze(0).detach().numpy()
-        print(np.shape(A))
         print("A:",np.diag(A))
-        print(np.shape(B))
         print("B:", B)
-        print(np.shape(E))
         print("E:", E)
     elif mod_name == "NSSM_model":
         A = model.A.effective_A().squeeze(0).detach().numpy().reshape((1,1))
         B = model.B.weight.squeeze(0).detach().numpy().reshape((1,2))
         E = model.E.weight.squeeze(0).detach().numpy().reshape((1,3))
-        print(np.shape(A))
         print("A:",np.diag(A))
-        print(np.shape(B))
         print("B:", B)
-        print(np.shape(E))
         print("E:", E)
     else:
         A = None

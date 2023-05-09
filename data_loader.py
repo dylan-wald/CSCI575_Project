@@ -70,6 +70,10 @@ class load_data():
 
     def data_split(self, day_train):
 
+        '''
+        splitting the data into train and test sets
+        '''
+
         X = np.hstack((
             self.T_sa.reshape(len(self.T_sa),1),
             self.ms_dot[:-1].reshape(len(self.ms_dot)-1,1),
@@ -78,11 +82,7 @@ class load_data():
             self.Q_int.reshape(len(self.Q_int),1)
             ))
 
-        # shift output one timestep forward
         y = self.x.reshape(len(self.x),1)
-        # y = np.delete(y, 0)
-        # y = np.concatenate((y, np.array([y[-1]])))
-        # y = y.reshape(len(self.x),1)
 
         X_train = X[:day_train*288, :]
         y_train = y[:day_train*288, :]
@@ -110,8 +110,12 @@ class load_data():
         y_test_tensors = torch.tensor(y_test_reshape, dtype=torch.float32)
 
         return X_train_tensors, y_train_tensors, X_test_tensors, y_test_tensors
-
+    
     def min_max_norm(data, new_min, new_max):
+
+        '''
+        normalizing based on max input value
+        '''
         
         x_min = data.min()
         x_max = data.max()
@@ -120,6 +124,10 @@ class load_data():
         return x_norm
 
     def min_max_norm_all(data, new_min, new_max, dim):
+
+        '''
+        normalizing all inputs individually
+        '''
         
         for i in range(dim):
             X = data[:, :, i]
