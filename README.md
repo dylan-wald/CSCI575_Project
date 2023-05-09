@@ -17,6 +17,7 @@
     - f_RNN.py - this is the recurrent neural network class
     - f_NSSM.py - this is the neural state space model class
         - f_LinearConstrained.py - this contains the constraints on the A matrix (described in report)
+    - f_GRU.py - this is the gated recurrent unit model class
     - plot_all.py - this script plots all of the results. Train data, loss vs. epochs, training performance and test performance
 
 **4) How to run:**
