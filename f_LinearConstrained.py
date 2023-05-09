@@ -1,3 +1,19 @@
+'''
+Code inspired by work in:
+
+J. Drgona, A. Tuor, and D. Vrabie, “Constrained physics-informed deep
+learning for stable system identification and control of unknown linear
+systems,” arXiv preprint arXiv:2004.11184, 2020.
+
+and is based off of code in:
+https://github.com/pnnl/deps_arXiv2020
+
+and cited as:
+J. Drgona, A. Tuor, and D. Vrabie, “Learning constrained adaptive
+differentiable predictive control policies with guarantees,” 2022
+
+'''
+
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
