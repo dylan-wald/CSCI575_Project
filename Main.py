@@ -28,7 +28,6 @@ from torch.autograd import Variable
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 
-from LSTM import LSTM
 from f_GRU import f_GRU
 from f_RNN import f_RNN
 from f_NSSM import f_NSSM
@@ -45,9 +44,10 @@ X_train, y_train, X_test, y_test = data.data_split(day_train=10)
 print("Training Shape", X_train.shape, y_train.shape)
 print("Testing Shape", X_test.shape, y_test.shape)
 
-norm_all = False
+# choose which normalization scheme to use
+norm_all = True
 norm = False
-no_norm = True
+no_norm = False
 if norm_all:
     X_train = load_data.min_max_norm_all(X_train, 0, 1, X_train.shape[-1])
     X_test = load_data.min_max_norm_all(X_test, 0, 1, X_test.shape[-1])
@@ -71,6 +71,7 @@ A_all_plot = []
 B_all_plot = []
 E_all_plot = []
 
+# individual parameter for each model
 model_list = ["RNN_model", "NSSM_model", "GRU_model"]
 for mod_name in model_list:
     model = 0
@@ -102,8 +103,6 @@ for mod_name in model_list:
 
     # shift the output temperatures by one timestep (track the next timesteps' Tz)
     Y_true = y_train
-    # Y_true = Y_true[:, 1:, :]
-    # Y_true = torch.concat((Y_true, Y_true[:, -1, :].reshape((16,1,1))), axis=1)
     
     # train the model
     loss_all = []
@@ -160,6 +159,6 @@ for mod_name in model_list:
     B_all_plot.append(B)
     E_all_plot.append(E)
 
-    # plotting(X_train, y_train, loss_all, Y_out, Y_true, Y_out_test, y_test, A=A, B=B, E=E)
+# Runs the plotting script to plot all results
 plot_all(X_train, y_train, Loss_all_plot, Y_pred_all_plot, Y_true, Y_pred_test_all, y_test, 
         model_list, A_all=A_all_plot, B_all=B_all_plot, E_all=E_all_plot)
