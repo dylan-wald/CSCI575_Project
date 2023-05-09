@@ -1,8 +1,13 @@
 # CSCI575_Project
 
-**1) Dylan Wald, ID: 10884058**
+**1) Name and CSM ID**
 
-**2) Python programming language (version 3.11.0)**
+- Name: Dylan Wald
+- Student ID: 10884058
+
+**2) What programming language is being used**
+
+ - Python programming language (version 3.11.0)
 
 **3) Code Structure:**
 
