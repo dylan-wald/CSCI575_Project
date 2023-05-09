@@ -15,8 +15,8 @@
 
 **4) How to run:**
 
-a) in Main.py, select type of normailzation by setting equal to "True", the rest to "False" (lines 48 - 50)
-b) type "python Main.py" into the terminal and press enter
+- in Main.py, select type of normailzation by setting equal to "True", the rest to "False" (lines 48 - 50)
+- type "python Main.py" into the terminal and press enter
 
 Required packages:
 - numpy (version 1.24.2)
