@@ -20,6 +20,11 @@
     - f_GRU.py - this is the gated recurrent unit model class
     - plot_all.py - this script plots all of the results. Train data, loss vs. epochs, training performance and test performance
 
+- Other information:
+    - Demo: This folder contains screenshots of the code running. 1) initialization, 2) RNN running, 3) NSSM running, 4) GRU running
+    - Documents: This folder contains a pdf of the final report
+        - Paper_Plots: This folder contains the plots of the results used in the paper. Included in case they are hard to see in the report.
+
 **4) How to run:**
 
 - in Main.py, select type of normailzation by setting desired method equal to "True" and the others equal to "False" (lines 48 - 50)
